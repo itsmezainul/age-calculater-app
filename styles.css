@@ -27,6 +27,7 @@ body {
   background-color: var(--white);
   border-radius: 20px 20px 90px;
   margin: 20vh auto 20px;
+  text-align: center;
 }
 
 .inputs {
@@ -44,6 +45,7 @@ label {
   font-weight: bold;
   font-family: 'Poppins',sans-serif;
   font-size: .8rem;
+  text-align: left;
 }
 
 input {
@@ -58,6 +60,7 @@ input {
   font-weight: bolder;
   margin-top: 5px;
   cursor: pointer;
+  position: relative;
 }
 
 input:hover {
@@ -81,15 +84,16 @@ input[type=number]:focus {
   outline-color: var(--purple);
 }
 
-.centerline {
+button {
   width: 90%;
   height: 1px;
-  background-color: var(--lightGrey);
-  margin: 70px auto 60px;
+  margin-top: 70px;
+  margin-bottom: 60px;
   position: relative;
+  border: solid 1px var(--offWhite);
 }
 
-.centerline img {
+button img {
   background-color: var(--purple);
   position: absolute;
   width: 70px;
@@ -100,7 +104,7 @@ input[type=number]:focus {
   border: 5px;
 }
 
-.centerline img:hover {
+button img:hover {
   background-color: var(--offBlack);
   cursor: pointer;
 }
@@ -112,6 +116,7 @@ input[type=number]:focus {
   font-style: italic;
   margin-left: 20px;
   font-family: 'Poppins',sans-serif;
+  text-align: left;
 }
 
 .output {
@@ -126,6 +131,10 @@ input[type=number]:focus {
 
   .centerline img {
     left: 95%;
+  }
+
+  input {
+    width: 100px;
   }
 }
 

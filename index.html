@@ -22,8 +22,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="inputs">
-        <div class="inputcontainer day">
+      <form method="GET">
+        <div class="inputs">
+        <div class=" inputcontainer day">
           <label for="day">DAY</label>
           <input type="number" id="day" name="day" placeholder="DD" />
         </div>
@@ -34,15 +35,15 @@
         <div class="inputcontainer year">
           <label for="year">YEAR</label>
           <input type="number" id="year" name="year" placeholder="YYYY" />
-        </div>
-      </div>
-      <div class="centerline">
-        <img src="./assets/images/icon-arrow.svg" alt="" />
-      </div>
+        </div></div>
+        <button type="submit" class="centerline">
+          <img src="./assets/images/icon-arrow.svg" alt="" />
+        </button>
+      </form>
       <div class="outputcontainer">
-        <p><span class="output outputd">-- </span>years</p>
-        <p><span class="output outputm">-- </span>month</p>
-        <p><span class="output outputdy">-- </span>days</p>
+        <p><span class="output outputd">- -</span>years</p>
+        <p><span class="output outputm">- -</span>month</p>
+        <p><span class="output outputdy">- -</span>days</p>
       </div>
     </div>
     <div class="attribution">
