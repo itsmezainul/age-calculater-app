@@ -91,7 +91,6 @@ button {
   margin-bottom: 60px;
   position: relative;
   border: solid 1px var(--offWhite);
-  
 }
 
 button img {
@@ -137,6 +136,7 @@ button img:hover {
   input {
     width: 100px;
   }
+
 }
 
 /* ERRORS SECTION */
