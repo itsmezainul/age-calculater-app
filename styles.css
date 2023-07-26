@@ -26,7 +26,7 @@ body {
   height: 550px;
   background-color: var(--white);
   border-radius: 20px 20px 90px;
-  margin: 20vh auto 20px;
+  margin: 10vh auto 20px;
   text-align: center;
 }
 
@@ -125,6 +125,10 @@ button img:hover {
 
 /* For Desktop Screen */
 @media screen and (min-width: 426px) {
+  .container {
+    margin: 20vh auto 20px;
+  }
+  
   .inputcontainer {
     margin: 50px 0 0 20px;
   }
