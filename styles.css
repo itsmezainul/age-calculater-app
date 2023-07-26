@@ -91,6 +91,7 @@ button {
   margin-bottom: 60px;
   position: relative;
   border: solid 1px var(--offWhite);
+  
 }
 
 button img {
@@ -139,6 +140,13 @@ button img:hover {
 }
 
 /* ERRORS SECTION */
+.errorD, .errorM, .errorY {
+  font-size: .6rem;
+  text-align: left;
+  margin-top: 5px;
+  position: fixed;
+}
+
 .errorText {
   color: var(--primaryLightRed);
 }
