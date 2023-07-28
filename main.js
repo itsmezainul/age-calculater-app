@@ -1,4 +1,3 @@
-let error;
 const date = new Date();
 const day = date.getDate();
 const month = date.getMonth() + 1;
@@ -7,34 +6,40 @@ const inputDay = document.querySelector("#day");
 const inputMonth = document.querySelector("#month");
 const inputYear = document.querySelector("#year");
 const outputDay = document.querySelector(".outputd");
-console.log(outputDay);
 const outputMonth = document.querySelector(".outputm");
-console.log(outputMonth);
 const outputYear = document.querySelector(".outputy");
-console.log(outputYear);
+
 const button = document.querySelector("img");
 const form = document.querySelector("form");
+
 let monthWiseDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
 let outputD;
 let outputM;
 let outputY;
 
+let errorDay;
+let errorMonth;
+let errorYear;
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   vaidatingProcess(inputDay, inputMonth, inputYear);
+  outputCal(inputDay, inputMonth, inputYear);
   button.classList.add("clicked");
   setTimeout(() => {
     button.classList.remove("clicked");
   }, 100);
+  console.log(errorDay);
+  console.log(errorMonth);
+  console.log(errorYear);
+  outputDisplay();
 });
 
 function vaidatingProcess(d, m, y) {
-  checkError(d);
-  checkError(m);
   checkError(y);
-  if (!error) {
-    outputCal(d, m, y);
-  }
+  checkError(m);
+  checkError(d);
 }
 
 function checkError(x) {
@@ -49,14 +54,21 @@ function checkError(x) {
         removeErrorFormat(x);
       }
     } else if (x.id === "month") {
-      if (inputMonth.value > monthWiseDays.length || inputMonth.value <= 0) {
+      if (
+        inputMonth.value > monthWiseDays.length ||
+        inputMonth.value <= 0 ||
+        (inputMonth.value > month && inputYear.value >= year)
+      ) {
         invalidErrorMessage(x);
       } else removeErrorFormat(x);
     } else if (x.id === "day") {
       if (
         inputDay.value > monthWiseDays[inputMonth.value - 1] ||
         inputDay.value <= 0 ||
-        inputDay.value > 31
+        inputDay.value > 31 ||
+        (inputDay.value > day &&
+          inputMonth.value >= month &&
+          inputYear.value >= year)
       ) {
         invalidErrorMessage(x);
       } else {
@@ -69,14 +81,26 @@ function checkError(x) {
 function showErrorFormat(x) {
   x.previousElementSibling.classList.add("errorText");
   x.classList.add("errorBorder");
-  error = true;
+  if (x.id === "day") {
+    errorDay = true;
+  } else if (x.id === "month") {
+    errorMonth = true;
+  } else if (x.id === "year") {
+    errorYear = true;
+  }
 }
 
 function removeErrorFormat(x) {
   x.nextElementSibling.innerHTML = "";
   x.previousElementSibling.classList.remove("errorText");
   x.classList.remove("errorBorder");
-  error = false;
+  if (x.id === "day") {
+    errorDay = false;
+  } else if (x.id === "month") {
+    errorMonth = false;
+  } else if (x.id === "year") {
+    errorYear = false;
+  }
 }
 
 function requiredErrorMessage(x) {
@@ -114,11 +138,16 @@ function outputCal(d, m, y) {
     outputM = month - m.value;
     outputY = year - y.value;
   }
-  outputYear.innerText = outputY;
-  setTimeout(() => {
-    outputMonth.innerText = outputM;
+}
+
+function outputDisplay() {
+  if (!errorDay && !errorMonth && !errorYear) {
+    outputYear.innerText = outputY;
     setTimeout(() => {
-      outputDay.innerText = outputD;
+      outputMonth.innerText = outputM;
+      setTimeout(() => {
+        outputDay.innerText = outputD;
+      }, 200);
     }, 200);
-  }, 200);
+  }
 }
