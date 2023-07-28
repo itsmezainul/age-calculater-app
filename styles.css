@@ -122,7 +122,7 @@ button img:hover {
 
 .output {
   color: var(--purple);
-  transition: all 0.5s;
+  transition: 0.5s;
 }
 
 /* For Desktop Screen */

@@ -99,29 +99,26 @@ function leapYearCheck(year) {
 
 function outputCal(d, m, y) {
   if (d.value > day && m.value >= month) {
-    outputD = (day+monthWiseDays[m.value-1]) - d.value;
-    outputM = month-1;
-      if (outputM < m.value) {
-        outputM = (outputM + 12) - m.value;
-        outputY = (year-1)-y.value;
-      }
+    outputD = day + monthWiseDays[m.value - 1] - d.value;
+    outputM = month - 1;
+    if (outputM < m.value) {
+      outputM = outputM + 12 - m.value;
+      outputY = year - 1 - y.value;
+    }
   } else if (d.value <= day && m.value > month) {
     outputD = day - d.value;
-    outputM = (month+12) - m.value;
-    outputY = (year-1) - y.value;
+    outputM = month + 12 - m.value;
+    outputY = year - 1 - y.value;
   } else {
     outputD = day - d.value;
     outputM = month - m.value;
     outputY = year - y.value;
-  };
+  }
+  outputYear.innerText = outputY;
   setTimeout(() => {
-    outputYear.innerText = outputY;
+    outputMonth.innerText = outputM;
     setTimeout(() => {
-      outputMonth.innerText = outputM;
-      setTimeout(() => { 
-        outputDay.innerText = outputD;
-      }, 500);
-    }, 500);
-  }, 500);
+      outputDay.innerText = outputD;
+    }, 200);
+  }, 200);
 }
-
