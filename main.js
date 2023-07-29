@@ -66,9 +66,11 @@ function checkError(x) {
         inputDay.value > monthWiseDays[inputMonth.value - 1] ||
         inputDay.value <= 0 ||
         inputDay.value > 31 ||
-        (inputDay.value > day &&
-          inputMonth.value >= month &&
-          inputYear.value >= year)
+        inputDay.value > day &&
+        inputMonth.value >= month &&
+        inputYear.value >= year ||
+        inputYear.value >= year &&
+        inputMonth.value > month
       ) {
         invalidErrorMessage(x);
       } else {
@@ -133,6 +135,10 @@ function outputCal(d, m, y) {
     outputD = day - d.value;
     outputM = month + 12 - m.value;
     outputY = year - 1 - y.value;
+  } else if (d.value > day && m.value < month) {
+    outputD = day + monthWiseDays[m.value - 1] - d.value;
+    outputM = month - 1 - m.value;
+    outputY = year - y.value;
   } else {
     outputD = day - d.value;
     outputM = month - m.value;
