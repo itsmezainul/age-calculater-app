@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/responsive-page-using-css-logics-using-pure-javascript-GwIxmawcSL)
 - Live Site URL: [Add live site URL here](https://itsmezainul.github.io/age-calculater-app/)
 
 ## My process
@@ -42,9 +42,10 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- Javascript
 
 ## Author
 
-- Website - [Add your name here](https://github.com/itsmezainul)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/itsmezainul)
+- LinkedIn - [Zainul Abdeen](https://www.linkedin.com/in/iamzainul/)
+- Frontend Mentor - [@itsmezainul](https://www.frontendmentor.io/profile/itsmezainul)
 
