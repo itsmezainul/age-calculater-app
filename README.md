@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/responsive-page-using-css-logics-using-pure-javascript-GwIxmawcSL)
-- Live Site URL: [Add live site URL here](https://itsmezainul.github.io/age-calculater-app/)
+- Solution URL: [solution URL here](https://www.frontendmentor.io/solutions/responsive-page-using-css-logics-using-pure-javascript-GwIxmawcSL)
+- Live Site URL: [live site URL here](https://itsmezainul.github.io/age-calculater-app/)
 
 ## My process
 
